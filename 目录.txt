@@ -1,0 +1,17 @@
+─┬─ dist：打包后目录 ─┬─ css：打包后的css目录
+  │                               ├─ images：打包后的图片目录
+  │                               ├─ js：打包后的js目录
+  │                               └─ index.html：打包后的html
+  ├─ node_modules：配置文件（暂时有点乱，没好好整理哪些要用哪些不用）
+  └─ pack：需要打包的文件夹 ─┬─ css：需要打包的css目录
+                                               ├─ images：需要打包的图片目录
+                                               ├─ js：需要打包的js目录（webpack的入口位置）
+                                               └─ index.html：需要打包的html
+
+本webpack使用了全局jq，所以pack/js/jquery-3.5.1.js文件可以删掉
+因为轮播图使用的多，所以我就用了swiper.min.js，本来是在html内部再写一个轮播js文件，但是webpack因为是js文件做入口，我只能写到入口文件内，所以pack/js/swiper.js也可以删掉
+我样式已经写入入口文件内，所以pack内的index打开是没有样式的（我删掉了）
+
+目前暂时做了单页面打包，还没测试多页面项目打包，入口文件所以就只写了一个页面的css，js
+
+（目前个人使用，感兴趣的各位可以继续研究，加内容）
